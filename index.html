@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HARIKRISHNAN K S | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#2563eb;
+filter:blur(200px);
+opacity:.2;
+top:-200px;
+left:-100px;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#7c3aed;
+filter:blur(200px);
+opacity:.2;
+bottom:-200px;
+right:-100px;
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+z-index:1000;
+}
+
+nav{
+width:90%;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:700;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:#60a5fa;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.profile-pic{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid rgba(255,255,255,.2);
+box-shadow:0 0 40px rgba(59,130,246,.5);
+margin-bottom:30px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+.hero h1{
+font-size:clamp(2.2rem,8vw,4rem);
+font-weight:800;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-size:1.4rem;
+color:#60a5fa;
+margin-bottom:25px;
+height:40px;
+}
+
+.hero p{
+font-size:1.1rem;
+color:#d1d5db;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+}
+
+.buttons{
+margin-top:35px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+margin:10px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.primary{
+background:#2563eb;
+color:white;
+}
+
+.primary:hover{
+transform:translateY(-5px);
+}
+
+.secondary{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+color:white;
+border:1px solid rgba(255,255,255,.1);
+}
+
+.secondary:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+margin-bottom:60px;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:30px;
+}
+
+.skills-grid,
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#60a5fa;
+}
+
+.timeline{
+display:grid;
+gap:25px;
+}
+
+.socials{
+text-align:center;
+margin-top:40px;
+}
+
+.socials a{
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:65px;
+height:65px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+color:white;
+font-size:28px;
+margin:10px;
+text-decoration:none;
+transition:.3s;
+}
+
+.socials a:hover{
+background:#2563eb;
+transform:translateY(-8px);
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+color:#9ca3af;
+}
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+#progress-bar{
+position:fixed;
+top:0;
+left:0;
+height:4px;
+background:#3b82f6;
+width:0%;
+z-index:99999;
+}
+
+.logo{
+background:linear-gradient(90deg,#60a5fa,#a855f7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.tech-stack{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin-top:40px;
+}
+
+.tech-stack span{
+padding:10px 18px;
+background:rgba(255,255,255,.08);
+border-radius:30px;
+}
+
+.section-title::after{
+content:"";
+display:block;
+width:120px;
+height:4px;
+margin:15px auto;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+border-radius:50px;
+}
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero h2{
+font-size:1rem;
+}
+
+nav ul{
+display:none;
+}
+
+.profile-pic{
+width:180px;
+height:180px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+<div id="progress-bar"></div>
+<header>
+<nav>
+<div class="logo">HARIKRISHNAN K S | Analog VLSI Enthusiast</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="profile.jpg" alt="Profile" class="profile-pic">
+
+<h1>HARIKRISHNAN K S</h1>
+
+<h2 id="typing"></h2>
+
+<p>
+Electronics and Communication Engineering Undergraduate passionate about
+Analog VLSI, Analog Layout Design, Physical Verification, FPGA Design and Embedded Systems.
+</p>
+
+<div class="buttons">
+
+<a href="mailto:harikrishnanks.karavattu@gmail.com" class="btn primary">
+<i class="fa-solid fa-envelope"></i> Hire Me
+</a>
+
+<a href="resume.pdf" class="btn secondary" target="_blank">
+<i class="fa-solid fa-file-arrow-down"></i> Resume
+</a>
+
+</div>
+
+</div>
+<div class="tech-stack">
+<span>Analog VLSI</span>
+<span>Layout Design</span>
+<span>Verilog HDL</span>
+<span>FPGA</span>
+<span>STM32</span>
+<span>Physical Verification</span>
+</div>
+</section>
+
+<section id="about" class="hidden">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="glass">
+
+<p>
+I am an Electronics and Communication Engineering undergraduate focused on Analog VLSI and Semiconductor Design. I have studied Analog IC Design Flow, PDKs, DRC, LVS, ERC, PEX, Corner Analysis and Analog Layout methodologies through industry training and academic learning. I am also experienced in FPGA design using Verilog HDL and embedded system development.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills" class="hidden">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="card">
+<h3><i class="fa-solid fa-microchip"></i> Analog VLSI</h3>
+<p>Analog Design Flow, PDK, DRC, LVS, ERC, PEX, Corner Analysis, Layout Concepts</p>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-code"></i> FPGA</h3>
+<p>Verilog HDL, RTL Design, FSM, Vivado, Icarus Verilog, GTKWave</p>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-wifi"></i> Embedded Systems</h3>
+<p>STM32, ESP32, Arduino, ESP8266</p>
+</div>
+
+<div class="card">
+<h3><i class="fa-solid fa-terminal"></i> Programming</h3>
+<p>C, C++, Python, Verilog HDL</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="hidden">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="card">
+<h3>Adaptive Real-Time Traffic Light Control</h3>
+<p>FPGA-based intelligent traffic management system using Verilog HDL on ZedBoard.</p>
+</div>
+
+<div class="card">
+<h3>RFID Attendance System</h3>
+<p>Contactless attendance management using ESP8266 and RFID technology.</p>
+</div>
+
+<div class="card">
+<h3>Environmental Monitoring System</h3>
+<p>STM32-based sensor monitoring platform with real-time alerts.</p>
+</div>
+
+<div class="card">
+<h3>Train Slot Booking System</h3>
+<p>Web-based booking system deployed for industrial visit seat allocation.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience" class="hidden">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="card">
+<h3>
+<a href="https://sophrosynesemi.com/" target="_blank" style="color:#60a5fa;text-decoration:none;">
+Sophrosyne Semiconductor | Kunjibettu, Udupi
+</a>
+</h3>
+<p><strong>Analog IC Design Trainee Intern</strong></p>
+<p>Studied Analog IC Design Flow, PDKs, DRC, LVS, ERC, PEX, Layout Design and Reliability Concepts.</p>
+<p>On-Site</p>
+</div>
+
+<div class="card">
+<h3>Cyborg AI Gen Automation | Kochi, Ernamkulam</h3>
+<p><strong>PCB Design & Assembly Intern</strong></p>
+<p>Worked on PCB design, assembly, testing and hardware validation.</p>
+<p>On-Site</p>
+</div>
+
+</div>
+
+</section>
+<section class="hidden">
+
+<h2 class="section-title">Highlights</h2>
+
+<div class="skills-grid">
+
+<div class="card">
+<h1>4+</h1>
+<p>Projects</p>
+</div>
+
+<div class="card">
+<h1>2</h1>
+<p>Internships</p>
+</div>
+
+<div class="card">
+<h1>8.14</h1>
+<p>CGPA</p>
+</div>
+
+<div class="card">
+<h1>2027</h1>
+<p>Graduation</p>
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="hidden">
+
+<h2 class="section-title">Connect With Me</h2>
+
+<div class="socials">
+
+<a href="mailto:harikrishnanks.karavattu@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a href="https://github.com/harikrishnankskaravattu-eng" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/harikrishnankstcr" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 HARIKRISHNAN K S | Portfolio
+</footer>
+
+<script>
+
+const text = [
+"Analog VLSI Enthusiast",
+"Analog Layout Design",
+"FPGA Developer",
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+if(count === text.length){
+count = 0;
+}
+
+currentText = text[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+count++;
+index = 0;
+setTimeout(type,1500);
+}
+else{
+setTimeout(type,100);
+}
+
+})();
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el);
+});
+window.addEventListener("scroll",()=>{
+
+const winScroll=document.documentElement.scrollTop;
+
+const height=
+document.documentElement.scrollHeight-
+document.documentElement.clientHeight;
+
+const scrolled=(winScroll/height)*100;
+
+document.getElementById("progress-bar").style.width=
+scrolled+"%";
+
+});
+</script>
+
+</body>
+</html>
