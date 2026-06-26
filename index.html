@@ -912,22 +912,26 @@ nav ul li a:hover{
 }
 
 }
-#nav-links{
-    pointer-events:auto !important;
-}
-
-#nav-links a{
-    pointer-events:auto !important;
-}
-
 .menu-overlay{
-    pointer-events:none !important;
+    pointer-events:none;
+    opacity:0;
+    visibility:hidden;
 }
 
 .menu-overlay.active{
-    pointer-events:none !important;
+    pointer-events:auto;
+    opacity:1;
+    visibility:visible;
 }
 
+#nav-links{
+    z-index:10000;
+}
+
+#nav-links a{
+    position:relative;
+    z-index:10001;
+}
 </style>
 </head>
 
