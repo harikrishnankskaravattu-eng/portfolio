@@ -912,7 +912,21 @@ nav ul li a:hover{
 }
 
 }
+#nav-links{
+    pointer-events:auto !important;
+}
 
+#nav-links a{
+    pointer-events:auto !important;
+}
+
+.menu-overlay{
+    pointer-events:none !important;
+}
+
+.menu-overlay.active{
+    pointer-events:none !important;
+}
 
 </style>
 </head>
@@ -1363,9 +1377,10 @@ overlay.addEventListener("click", () => {
 
 
 document.querySelectorAll("#nav-links a").forEach(link => {
-    link.onclick = function () {
-        alert("Clicked: " + this.textContent);
-    };
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+    });
 });
 const text = [
 "Analog VLSI Enthusiast",
