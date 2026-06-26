@@ -15,11 +15,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -664,6 +667,23 @@ filter:blur(10px);
 z-index:99999;
 }
 @media(max-width:768px){
+.section-title{
+        text-align:center;
+    }
+section{
+    padding:80px 20px;
+}
+
+.glass,
+.card{
+    text-align:center;
+}
+
+.skills-grid,
+.project-grid,
+.timeline{
+    justify-items:center;
+}
 .menu-title{
 
     margin-bottom:25px;
@@ -700,10 +720,13 @@ z-index:99999;
         gap:10px;
     }
 
-    .tech-stack span{
-        padding:10px 14px;
-        font-size:13px;
-    }
+    .tech-stack{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
 
     .tech-stack span i{
         font-size:15px;
